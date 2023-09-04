@@ -1,4 +1,4 @@
-import FetchChapters from "../fetchChapters";
+import FetchChapters from "../../utils/fetchChapters";
 
 export default function Test() {
     return (
