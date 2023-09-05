@@ -1,7 +1,8 @@
-import { fetch } from 'graphql-fetch'
-
 export default function Page({ params }) {
-    return <div>Chapter: {params.slug}</div>
+    
+    const { slug } = params
+    
+    return <div>Chapter: {decodeURIComponent(slug)}</div>
   }
 
   export async function generateStaticParams() {
@@ -11,13 +12,13 @@ export default function Page({ params }) {
             chapterConnection {
                 edges {
                     node {
-                        id
+                        title
                     }
                 }
             }
         }`
     
-    const response = await fetch('http://localhost:3000/index.html#/graphql', 
+    const response = await fetch('http://localhost:4001/graphql', 
     {
         method: 'POST',
         headers: {
@@ -27,10 +28,10 @@ export default function Page({ params }) {
     })
 
     const data = await response.json()
-    const slugs = data.data.chapterConnection.edges.map(edge =>
-        edge.node.id)
+    const titleArray = await data.data.chapterConnection.edges.map(edge =>
+        edge.node)
    
-    return slugs.map(slug => ({
-      slug: slug,
+    return titleArray.map(node => ({
+      title: node.title,
     }))
   }
