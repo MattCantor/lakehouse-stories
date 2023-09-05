@@ -21,10 +21,10 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
-        format: "md",
+        name: "chapter",
+        label: "Chapters",
+        path: "src/content/chapters",
+        format: "mdx",
         fields: [
           // {
           //   type: "number",
