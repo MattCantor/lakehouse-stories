@@ -24,7 +24,14 @@ export default defineConfig({
         name: "post",
         label: "Posts",
         path: "content/posts",
+        format: "md",
         fields: [
+          // {
+          //   type: "number",
+          //   name: "id",
+          //   label: "ID",
+          //   required: true,
+          // },
           {
             type: "string",
             name: "title",
@@ -32,6 +39,11 @@ export default defineConfig({
             isTitle: true,
             required: true,
           },
+          // {
+          //   type: "string",
+          //   name: "synopsis",
+          //   label: "Synopsis",
+          // },
           {
             type: "rich-text",
             name: "body",
