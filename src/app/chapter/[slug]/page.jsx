@@ -1,3 +1,5 @@
+import Chapter from '../../../components/chapter.jsx'
+
 export default async function Page({ params }) {
 
     const { slug } = params
@@ -7,6 +9,7 @@ export default async function Page({ params }) {
     return (
     <>
     <div>Chapter: {decodeURIComponent(slug)}</div>
+    <Chapter slug={slug}/>
     </>
     
     )
