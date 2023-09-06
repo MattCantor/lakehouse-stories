@@ -1,8 +1,15 @@
-export default function Page({ params }) {
-    
+export default async function Page({ params }) {
+
     const { slug } = params
+
+    // const Chapter = await import from `../../../content/chapters/${slug}.mdx`
     
-    return <div>Chapter: {decodeURIComponent(slug)}</div>
+    return (
+    <>
+    <div>Chapter: {decodeURIComponent(slug)}</div>
+    </>
+    
+    )
   }
 
   export async function generateStaticParams() {
@@ -12,7 +19,7 @@ export default function Page({ params }) {
             chapterConnection {
                 edges {
                     node {
-                        title
+                        id
                     }
                 }
             }
@@ -32,6 +39,6 @@ export default function Page({ params }) {
         edge.node)
    
     return titleArray.map(node => ({
-      title: node.title,
+      id: node.id
     }))
   }

@@ -8,7 +8,7 @@ export async function getTitleArray() {
       chapterConnection {
           edges {
               node {
-                  title
+                  id
               }
           }
       }
@@ -27,7 +27,10 @@ export async function getTitleArray() {
     const data = await response.json()
     const titlesArray = await data.data.chapterConnection.edges.map(edge => edge.node)
 
-    return titlesArray.map(node => node.title) 
+    return titlesArray.map(node => node.id
+      .split('/')
+      .pop()
+      .replace(/\.mdx$/,"")) 
 }
 
 export default async function TOC() {

@@ -12,6 +12,7 @@ async function runQuery() {
                     edges {
                         node {
                             title
+                            id
                         }
                     }
                 }
@@ -20,20 +21,28 @@ async function runQuery() {
     })
 
 const data = await response.json()
-return data.data.chapterConnection.edges.map(edge => edge.node)
+const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.id
+    .split('/')
+    .pop()
+    .replace(/\.mdx$/,""))
+console.log(dataArray)
 
 }
 
-(async () => {
-    try {
-        const data = await runQuery()
-        console.log(data)
-    } catch {
-        console.error("There was an error", error)
-    }
-})()
+runQuery()
 
-console.log(runQuery())
+
+// (async () => {
+//     try {
+//         const data = await runQuery()
+//         console.log(data)
+//     } catch {
+//         console.error("There was an error", error)
+//     }
+// })()
+
+// console.log(runQuery())
+// console.log("test")
 
 // (async () => {
 //     const data = await runQuery()
