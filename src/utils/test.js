@@ -1,3 +1,4 @@
+
 const endpoint = 'http://localhost:4001/graphql'
 
 async function runQuery() {
@@ -47,3 +48,7 @@ runQuery()
 // (async () => {
 //     const data = await runQuery()
 //     return console.log(data)})()
+
+const response = await client.queries.chapterConnection({
+    filter: {title: {startsWith: 'Wally'}}
+})
