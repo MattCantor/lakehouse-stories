@@ -39,11 +39,11 @@ export default defineConfig({
             isTitle: true,
             required: true,
           },
-          // {
-          //   type: "string",
-          //   name: "synopsis",
-          //   label: "Synopsis",
-          // },
+          {
+            type: "string",
+            name: "synopsis",
+            label: "Synopsis",
+          },
           {
             type: "rich-text",
             name: "body",

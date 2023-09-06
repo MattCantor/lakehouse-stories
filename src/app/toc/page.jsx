@@ -78,10 +78,16 @@ export async function getTitleArray() {
   const titlesArray = data.data.chapterConnection.edges.map(edge => edge.node)
 
   
-  return titlesArray.map(node => node.id
-    .split('/')
-    .pop()
-    .replace(/\.mdx$/,"")) 
+  return titlesArray.map(node => {
+    return {
+      title: node.title,
+      path: node.id
+      .split('/')
+      .pop()
+      .replace(/\.mdx$/,""),
+      synopsis: node.synopsis
+    }
+  }) 
 }
 
 export default async function TOC() {
@@ -90,9 +96,12 @@ const titles = await getTitleArray()
 
 return (
   <ul>
-    {titles.map((title, index) => (
+    {titles.map((item, index) => (
       <li key={index}>
-        <Link href={`/chapter/${title}`}>{title}</Link>
+        <div className="flex space-x-8">
+          <Link href={`/chapter/${item.title}`}>{item.title}</Link>
+          <h1>{item.synopsis}</h1>
+        </div>
       </li>
     ))}
   </ul>

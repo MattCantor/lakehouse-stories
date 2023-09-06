@@ -13,6 +13,8 @@ async function runQuery() {
                     edges {
                         node {
                             title
+                            synopsis
+                            body
                             id
                         }
                     }
@@ -27,7 +29,7 @@ const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.
     .pop()
     .replace(/\.mdx$/,""))
 console.log(dataArray)
-
+console.log(data)
 }
 
 runQuery()
@@ -49,6 +51,3 @@ runQuery()
 //     const data = await runQuery()
 //     return console.log(data)})()
 
-const response = await client.queries.chapterConnection({
-    filter: {title: {startsWith: 'Wally'}}
-})
