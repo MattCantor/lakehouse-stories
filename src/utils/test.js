@@ -12,10 +12,8 @@ async function runQuery() {
                 chapterConnection {
                     edges {
                         node {
-                            title
-                            synopsis
-                            body
                             id
+                            body
                         }
                     }
                 }
@@ -28,8 +26,10 @@ const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.
     .split('/')
     .pop()
     .replace(/\.mdx$/,""))
-console.log(dataArray)
-console.log(data)
+// console.log(dataArray)
+const bodyArray = await data.data.chapterConnection.edges.map(edge => edge.node.body.children)
+// console.log(data.data.chapterConnection.edges
+console.log(bodyArray)
 }
 
 runQuery()
