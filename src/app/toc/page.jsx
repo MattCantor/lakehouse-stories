@@ -99,7 +99,7 @@ return (
     {titles.map((item, index) => (
       <li key={index}>
         <div className="flex space-x-8">
-          <Link href={`/chapter/${item.title}`}>{item.title}</Link>
+          <Link href={`/chapter/${item.path}`}>{item.title}</Link>
           <h1>{item.synopsis}</h1>
         </div>
       </li>

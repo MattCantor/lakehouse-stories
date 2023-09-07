@@ -12,7 +12,7 @@ export default async function Page({ params }) {
 
     return (
     <>
-    <div>Chapter: {decodeURIComponent(slug)}</div>
+    {/* <div>Chapter: {decodeURIComponent(slug)}</div> */}
     <Chapter slug={slug}/>
     </>
     
