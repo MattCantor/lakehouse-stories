@@ -28,8 +28,9 @@ const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.
     .replace(/\.mdx$/,""))
 // console.log(dataArray)
 const bodyArray = await data.data.chapterConnection.edges.map(edge => edge.node.body.children)
-// console.log(data.data.chapterConnection.edges
-console.log(bodyArray[4])
+console.log(bodyArray)
+
+
 }
 
 runQuery()
