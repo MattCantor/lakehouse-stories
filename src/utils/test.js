@@ -29,7 +29,7 @@ const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.
 // console.log(dataArray)
 const bodyArray = await data.data.chapterConnection.edges.map(edge => edge.node.body.children)
 // console.log(data.data.chapterConnection.edges
-console.log(bodyArray)
+console.log(bodyArray[4])
 }
 
 runQuery()
