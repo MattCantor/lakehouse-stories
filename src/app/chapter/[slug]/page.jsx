@@ -13,7 +13,7 @@ export default async function Page({ params }) {
   const { slug } = params
   // console.log(slug)
   const post = await client.queries.chapter({relativePath: `${slug}.mdx`})
-  // console.log(post.data.chapter.body)
+  console.log(post.data.chapter.body.children[0])
 
   return (<>
       {/* <h1>{post.data.chapter.title}</h1>
@@ -26,6 +26,7 @@ export default async function Page({ params }) {
 
     const data = await client.queries.chapterConnection()
     const titleArray = data.data.chapterConnection.edges.map(edge => edge.node)
+    // console.log(`titleArray: ${titleArray}`)
    
     return titleArray.map(node => ({
       id: node.id
