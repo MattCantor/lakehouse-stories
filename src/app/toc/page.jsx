@@ -98,9 +98,14 @@ return (
   <ul>
     {titles.map((item, index) => (
       <li key={index}>
-        <div className="flex space-x-8">
-          <Link href={`/chapter/${item.path}`}>{item.title}</Link>
-          <h1>{item.synopsis}</h1>
+        <div className="pb-3">
+          <Link href={`/chapter/${item.path}`}>
+            <div className="flex">
+              <h2 className='font-bold'>{item.title}</h2>
+              <h2 className="ms-auto">{index + 1}</h2>
+            </div>
+              <h2 className="italic">{item.synopsis}</h2>
+          </Link>
         </div>
       </li>
     ))}
