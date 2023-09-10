@@ -12,8 +12,9 @@ async function runQuery() {
                 chapterConnection {
                     edges {
                         node {
-                            id
-                            body
+                            _sys {
+                                filename
+                            }
                         }
                     }
                 }
@@ -22,14 +23,15 @@ async function runQuery() {
     })
 
 const data = await response.json()
-const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.id
-    .split('/')
-    .pop()
-    .replace(/\.mdx$/,""))
-// console.log(dataArray)
-const bodyArray = await data.data.chapterConnection.edges.map(edge => edge.node.body.children)
-console.log(bodyArray)
-
+// const dataArray = await data.data.chapterConnection.edges.map(edge => edge.node.id
+//     .split('/')
+//     .pop()
+//     .replace(/\.mdx$/,""))
+// // console.log(dataArray)
+// const bodyArray = await data.data.chapterConnection.edges.map(edge => edge.node.body.children)
+// console.log(bodyArray)
+// console.log(data.data.chapterConnection.edges.map(edge => edge.node))
+console.log(data.data.chapterConnection.edges.map(edge => edge.node._sys.filename))
 
 }
 
