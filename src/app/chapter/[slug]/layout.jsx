@@ -2,16 +2,10 @@ export default function ChapterLayout({
     children, // will be a page or nested layout
   }) {
     return (
-      <main className="container">
-        <div className="row mx-auto">
-            <div className="col col-span-8">
-                <div className="mx-auto max-w-md">
-                    <div>
-                        {children}
-                    </div>
-                </div>
-            </div>
-        </div>
+      <main>
+        <section className="container border-solid border-gray-200 shadow-page mt-6 mx-auto mb-0 pt-14 px-12 pb-12 max-w-xl font-serif">
+          {children}
+        </section>
       </main>
     )
   }

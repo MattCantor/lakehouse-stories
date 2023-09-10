@@ -5,12 +5,12 @@ import Paginate from '@/src/components/paginate.jsx'
 
 export const dynamic = "force-dynamic"
 
-async function getLastChapter() {
+// async function getLastChapter() {
 
-  const data = await client.queries.chapterConnection()
-  const titleArray = data.data.chapterConnection.edges.map(edge => edge.node.id)
-  return titleArray[titleArray.length-1]
-}
+//   const data = await client.queries.chapterConnection()
+//   const titleArray = data.data.chapterConnection.edges.map(edge => edge.node.id)
+//   return titleArray[titleArray.length-1]
+// }
 
 const components = {
   p: (props) => {
@@ -26,38 +26,38 @@ export default async function Page({ params }) {
   console.log(`slug in Page: ${slug}`)
   const post = await client.queries.chapter({relativePath: `${slug}.mdx`})
 
-  function getPrevAndNextChapter(chapterString) {
-    const currentMatches = chapterString.match(/(\d+)$/)
-    const current = currentMatches ? parseInt(currentMatches[1],10) : 1
-    const lastChapter = getLastChapter()
-    const lastMatches = lastChapter.match(/(\d+)$/)
-    const last = lastMatches ? parseInt(lastMatches[0],10) : 1
-    const next = chapterString.replace(/(\d+)$/, (match) => parseInt(match, 10) + 1) 
-    const prev = chapterString.replace(/(\d+)$/, (match) => parseInt(match, 10) - 1)
-    return {
-      prev: current === 0 ? chapterString.replace(/(\d+)$/, last) : prev,
-      next: current === last ? "chapter1" : next
-    }
-}
+//   function getPrevAndNextChapter(chapterString) {
+//     const currentMatches = chapterString.match(/(\d+)$/)
+//     const current = currentMatches ? parseInt(currentMatches[1],10) : 1
+//     const lastChapter = getLastChapter()
+//     const lastMatches = lastChapter.match(/(\d+)$/)
+//     const last = lastMatches ? parseInt(lastMatches[0],10) : 1
+//     const next = chapterString.replace(/(\d+)$/, (match) => parseInt(match, 10) + 1) 
+//     const prev = chapterString.replace(/(\d+)$/, (match) => parseInt(match, 10) - 1)
+//     return {
+//       prev: current === 0 ? chapterString.replace(/(\d+)$/, last) : prev,
+//       next: current === last ? "chapter1" : next
+//     }
+// }
 
-  const prev = getPrevAndNextChapter(slug).prev
-  const next = getPrevAndNextChapter(slug).next
+  // const prev = getPrevAndNextChapter(slug).prev
+  // const next = getPrevAndNextChapter(slug).next
 
-  // return (<>
-  //     <Paginate slug={slug}/>
-  //     <h1 className="tracking-wide uppercase text-center font-bold">{post.data.chapter.title}</h1>
-  //     <h2 className="text-center italic pb-2">{post.data.chapter.synopsis}</h2>
-  //     <TinaMarkdown content={post.data.chapter.body} components={components}/>
-  //     <Paginate slug={slug}/>
-  //   </>)
-
-    return (<>
-      <Paginate prev={prev} next={next}/>
-      <h1 className="tracking-wide uppercase text-center font-bold">{post.data.chapter.title}</h1>
+  return (<>
+      <Paginate slug={slug}/>
+      <h1 className="tracking-wide uppercase text-center font-bold text-xl">{post.data.chapter.title}</h1>
       <h2 className="text-center italic pb-2">{post.data.chapter.synopsis}</h2>
       <TinaMarkdown content={post.data.chapter.body} components={components}/>
-      <Paginate prev={prev} next={next}/>
+      <Paginate slug={slug}/>
     </>)
+
+    // return (<>
+    //   <Paginate prev={prev} next={next}/>
+    //   <h1 className="tracking-wide uppercase text-center font-bold">{post.data.chapter.title}</h1>
+    //   <h2 className="text-center italic pb-2">{post.data.chapter.synopsis}</h2>
+    //   <TinaMarkdown content={post.data.chapter.body} components={components}/>
+    //   <Paginate prev={prev} next={next}/>
+    // </>)
   }
 
   export async function generateStaticParams() {
