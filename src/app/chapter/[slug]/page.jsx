@@ -2,6 +2,7 @@ import { client } from '../../../../tina/__generated__/client.js'
 // import Chapter from '../../../components/chapter.jsx'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import Paginate from '@/src/components/paginate.jsx'
+import NextImage from 'next/image'
 
 export const dynamic = "force-dynamic"
 
@@ -9,6 +10,16 @@ const components = {
   p: (props) => {
     return (
       <p className="indent-2 text-justify pb-2 first-of-type:first-letter:text-xl first-of-type:first-letter:font-bold first-of-type:first-letter:uppercase">{props.children}</p>
+    )
+  },
+  Illustration: (props) => {
+    return (
+      <NextImage
+        src={props.src}
+        alt={props.alt}
+        width={500}
+        height={500}
+      />
     )
   }
 }

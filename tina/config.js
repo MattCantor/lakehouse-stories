@@ -26,12 +26,6 @@ export default defineConfig({
         path: "src/content/chapters",
         format: "mdx",
         fields: [
-          // {
-          //   type: "number",
-          //   name: "id",
-          //   label: "ID",
-          //   required: true,
-          // },
           {
             type: "string",
             name: "title",
@@ -49,7 +43,25 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
-          },
+            templates: [
+              {
+                name: "Illustration",
+                label: "Illustration",
+                fields: [
+                  {
+                    name: "src",
+                    label: "src",
+                    type: "string",
+                  },
+                  {
+                    name: "alt",
+                    label: "alt",
+                    type: "string"
+                  }
+                ]
+              }
+            ]
+          }
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
