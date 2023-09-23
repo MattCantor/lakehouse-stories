@@ -17,8 +17,9 @@ const components = {
       <NextImage
         src={props.src}
         alt={props.alt}
-        width={500}
-        height={500}
+        width={150}
+        height={150}
+        className={`${props.float === 'left' ? "float-left" : "float-right"} mx-2 rounded-full`}
       />
     )
   }

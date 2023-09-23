@@ -57,6 +57,11 @@ export default defineConfig({
                     name: "alt",
                     label: "alt",
                     type: "string"
+                  },
+                  {
+                    name: "float",
+                    lable: "float",
+                    type: "string"
                   }
                 ]
               }
