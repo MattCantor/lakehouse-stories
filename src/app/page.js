@@ -1,14 +1,28 @@
-// 'use client'
+'use-client'
 
-// import Story from '../content/chapters/chapter1.mdx'
+import Link from 'next/link'
+import Image from 'next/image'
+import Cabin from '@/public/illustrations/lakehouse/Lakehouse1.1.png'
 
 export default function Home() {
   return (
-    <>
-      <h1 className="bg-blue-500 text-white p-4 rounded inline-flex">
-        Hello, Tailwind
-      </h1>
-      {/* <Story/> */}
-    </>
+    <section
+      className="overflow-hidden"
+    >
+      <Link href={`/toc`}>
+        <Image
+              src={Cabin}
+              alt="Lakehouse"
+              fill={true}
+              objectFit='cover'
+              // className='relative'
+        />
+      </Link>
+  </section>
   )
 }
+
+{/* <div className="absolute top-0 left-0 w-full h-[25%] bg-black opacity-70"></div>
+    <div className="absolute bottom-0 left-0 w-full h-[25%] bg-black opacity-70"></div>
+    <div className="absolute top-[25%] left-0 w-[25%] h-[50%] bg-black opacity-70"></div>
+    <div className="absolute top-[25%] right-0 w-[25%] h-[50%] bg-black opacity-70"></div> */}

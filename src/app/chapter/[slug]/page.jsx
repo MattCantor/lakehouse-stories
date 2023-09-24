@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic"
 const components = {
   p: (props) => {
     return (
-      <p className="indent-2 text-justify pb-2 first-of-type:first-letter:text-xl first-of-type:first-letter:font-bold first-of-type:first-letter:uppercase">{props.children}</p>
+      <p className="indent-6 text-justify p-2 first-of-type:first-letter:text-3xl first-of-type:first-letter:font-bold first-of-type:first-letter:uppercase">{props.children}</p>
     )
   },
   Illustration: (props) => {
@@ -17,9 +17,9 @@ const components = {
       <NextImage
         src={props.src}
         alt={props.alt}
-        width={150}
-        height={150}
-        className={`${props.float === 'left' ? "float-left" : "float-right"} mx-2 rounded-full`}
+        width={130}
+        height={130}
+        className={`${props.float === 'left' ? "float-left" : "float-right"} mx-2 rounded-md border border-gray-300 shadow-md opacity-80 transform rotate-[-0.5deg]`}
       />
     )
   }

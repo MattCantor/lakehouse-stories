@@ -1,5 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+// import Image from 'next/image'
+// import Cabin from '@/public/illustrations/lakehouse/Lakehouse1.1.png'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+          {children}
       </body>
     </html>
   )
