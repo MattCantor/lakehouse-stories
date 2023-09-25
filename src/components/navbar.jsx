@@ -17,7 +17,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-slate-200">
               {item.name}
