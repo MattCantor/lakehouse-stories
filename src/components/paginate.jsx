@@ -11,7 +11,7 @@ import Link from "next/link"
 export default async function Paginate({next, prev}) {
 
 return (
-  <div className="flex justify-between space-x-3 pb-6 font-light text-xs">
+  <div className="flex justify-between space-x-3 font-light text-xs">
     <Link href={`./${prev}`}>Previous</Link>
     <Link href={"../toc"}>Lakehouse Stories</Link>
     <Link href={`./${next}`}>Next</Link>

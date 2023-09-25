@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic"
 const components = {
   p: (props) => {
     return (
-      <p className="indent-6 text-justify p-2 first-of-type:first-letter:text-3xl first-of-type:first-letter:font-bold first-of-type:first-letter:uppercase">{props.children}</p>
+      <p className="indent-6 text-justify p-2 first-of-type:first-letter:text-3xl first-of-type:first-letter:font-bold first-of-type:first-letter:uppercase last-of-type:pb-8">{props.children}</p>
     )
   },
   Illustration: (props) => {
@@ -41,7 +41,7 @@ export default async function Page({ params }) {
 
   return (<>
       <Paginate next={next} prev = {prev}/>
-      <h1 className="tracking-wide uppercase text-center font-bold text-xl">{post.data.chapter.title}</h1>
+      <h1 className="tracking-wide uppercase text-center font-bold text-xl pt-6">{post.data.chapter.title}</h1>
       <h2 className="text-center italic pb-2">{post.data.chapter.synopsis}</h2>
       <TinaMarkdown content={post.data.chapter.body} components={components}/>
       <Paginate next={next} prev = {prev}/>
