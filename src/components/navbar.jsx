@@ -12,7 +12,7 @@ export default function Navbar() {
     <header className="bg-black">
       <nav className="mx-auto flex items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="./" className="text-sm font-semibold leading-6 text-slate-200">
+          <Link href="/" className="text-sm font-semibold leading-6 text-slate-200">
             The Lakehouse Stories
           </Link>
         </div>
