@@ -1,7 +1,7 @@
 import { client } from '../../../tina/__generated__/client.js'
 import Link from "next/link"
 
-export const dynamic = "force-dynamic"
+// export const dynamic = "force-dynamic"
 
 
 // const endpoint = 'http://localhost:4001/graphql'

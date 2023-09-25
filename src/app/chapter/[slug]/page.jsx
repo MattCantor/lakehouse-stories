@@ -4,7 +4,7 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import Paginate from '@/src/components/paginate.jsx'
 import NextImage from 'next/image'
 
-export const dynamic = "force-dynamic"
+// export const dynamic = "force-dynamic"
 
 const components = {
   p: (props) => {
