@@ -12,7 +12,7 @@ jobs:
     name: "Make Suggestion"
     runs-on: ubuntu-latest
     steps:
-      - uses: tinacms/markdown-bot@v0
+      - uses: tinacms/ai-content@v0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
