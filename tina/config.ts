@@ -1,7 +1,8 @@
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const branch =
+  process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
@@ -56,21 +57,20 @@ export default defineConfig({
                   {
                     name: "alt",
                     label: "alt",
-                    type: "string"
+                    type: "string",
                   },
                   {
                     name: "float",
-                    lable: "float",
-                    type: "string"
-                  }
-                ]
-              }
-            ]
-          }
+                    label: "float",
+                    type: "string",
+                  },
+                ],
+              },
+            ],
+          },
         ],
         ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          router: ({ document }) => `/chapter/${document._sys.filename}`,
         },
       },
     ],
