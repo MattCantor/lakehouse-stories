@@ -14,6 +14,11 @@ npm run build    # Build for production (tinacms build && vite build)
 npm run start    # Run production server (node dist/server/server.js)
 ```
 
+To access the dev server from other devices on the local network (e.g., iPad via Blink Shell):
+```bash
+npx tinacms dev -c "vite dev --host"    # Exposes dev server on local network
+```
+
 Node.js 22.x required (see .nvmrc).
 
 ## Architecture

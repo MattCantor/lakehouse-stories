@@ -13,9 +13,9 @@ export default function Illustration({
     <img
       src={src}
       alt={alt}
-      width={130}
-      height={130}
-      className={`${float === "left" ? "float-left" : "float-right"} mx-2 rounded-md border border-gray-300 shadow-md opacity-80 transform rotate-[-0.5deg]`}
+      width={140}
+      height={140}
+      className={`${float === "left" ? "float-left mr-4" : "float-right ml-4"} mb-2 rounded border border-stone-300 shadow-md transform rotate-[-0.5deg]`}
     />
   );
 }
