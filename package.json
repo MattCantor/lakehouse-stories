@@ -7,8 +7,8 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "tinacms dev -c \"vite dev\"",
-    "build": "tinacms build && vite build",
+    "dev": "tinacms dev -c \"vinxi dev\"",
+    "build": "tinacms build && vinxi build",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
