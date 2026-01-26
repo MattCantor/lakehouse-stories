@@ -41,5 +41,12 @@
   "browserslist": [
     "defaults and supports es6-module",
     "maintained node versions"
-  ]
+  ],
+  "overrides": {
+    "dompurify": "^3.3.1",
+    "jsonpath-plus": "^10.3.0",
+    "esbuild": "^0.25.0",
+    "react-router": "^6.30.3",
+    "react-router-dom": "^6.30.3"
+  }
 }
