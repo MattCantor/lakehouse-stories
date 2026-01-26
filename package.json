@@ -7,9 +7,9 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "tinacms dev -c \"vinxi dev\"",
-    "build": "tinacms build && vinxi build",
-    "start": "node .output/server/index.mjs"
+    "dev": "tinacms dev -c \"vite dev\"",
+    "build": "tinacms build && vite build",
+    "start": "node dist/server/server.js"
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.0",
